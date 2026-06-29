@@ -21,13 +21,13 @@
 
 **What we're building, for whom, why now.**
 
-- **Product:**
-- **AI Value Archetype:**
-- **Vulnerability Scores:** Moat __/5 · Data __/5 · Platform __/5
-- **Top Risk:**
-- **Confidence:** H / M / L
-- **Prototype:** [link]
-- **Kill Criteria:**
+- **Product:** My company's Payments Analytics Power BI dashboard (today) → **Aperture**, an AI Payment Performance Intelligence engine that recovers revenue lost to failed and wrongly-declined transactions (the bet).
+- **AI Value Archetype:** Copilot — surfaces recoverable declines and recommended fixes; the analyst reviews and applies. (Orchestrator DNA via cross-processor routing; path to Automator.)
+- **Vulnerability Scores:** Moat **2**/5 · Data **4**/5 · Platform **2**/5
+- **Top Risk:** The processors we rely on are shipping native acceptance-optimization (e.g., Stripe Authorization Boost), so the bet only wins by leaning on cross-brand gift-card/prepaid data those processors can't see.
+- **Confidence:** M (leaning H) — threat is real and live; firms to H once we confirm exactly which processors carry our volume.
+- **Prototype:** [Lovable Prototype](https://aperture-insight-recovery.lovable.app)
+- **Kill Criteria:** After a 90-day pilot, kill if (1) recovered revenue ≤ what processors already recover natively, (2) false-positive retries cost more in fees/chargebacks than they recover, or (3) analysts don't adopt the recommendations.
 
 → Details: [`01-the-bet/`](01-the-bet/)
 
