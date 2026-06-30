@@ -5,16 +5,14 @@
 ---
 
 ## Strategy at a Glance
-
 | Component | Module | Status | Key Artifact |
 |-----------|--------|--------|-------------|
-| **The Bet** | M1 | [ ] | `01-the-bet/` |
-| **The Moat** | M2 | [ ] | `02-the-moat/` |
-| **The Margin** | M3 | [ ] | `03-the-margin/` |
-| **The Contract** | M4 | [ ] | `04-the-contract/` |
-| **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
-| **The Pitch** | M6 | [ ] | `06-the-pitch/` |
-
+| **The Bet** | M1 | [x] | [`01-the-bet/`](01-the-bet/) |
+| **The Moat** | M2 | [x] | [`02-the-moat/`](02-the-moat/) |
+| **The Margin** | M3 | [x] | [`03-the-margin/`](03-the-margin/) |
+| **The Contract** | M4 | [x] | [`04-the-contract/`](04-the-contract/) |
+| **The Guardrails** | M5 | [x] | [`05-the-guardrails/`](05-the-guardrails/) |
+| **The Pitch** | M6 | [ ] | [`06-the-pitch/`](06-the-pitch/) |
 ---
 
 ## The Bet (M1)
@@ -34,56 +32,48 @@
 ---
 
 ## The Moat (M2)
-
 **Why this won't get copied in 6 months.**
-
-- **Data Flywheel Score:** __/20
-- **Weakest Loop:**
-- **Competitive Position:** [describe axes + placement]
-- **Encroachment Defense:**
-- **Vendor Portability:** Ready / Partial / Locked
+- **Data Flywheel Score:** 13/20 (Correction 4 · Preference 3 · Domain Context 4 · Network 2)
+- **Weakest Loop:** Network — decline/recovery data is siloed per program, so new programs don't yet make the whole smarter.
+- **Competitive Position:** strong on data (cross-brand stored-value signal others can't see), weak on platform (we sit on processors who can copy generic optimization).
+- **Encroachment Defense:** lean into the stored-value data moat; the more programs pooled, the harder to copy.
+- **Vendor Portability:** Partial — core models are owned and portable; the LLM insights layer is platform-dependent.
 
 → Details: [`02-the-moat/`](02-the-moat/)
 
 ---
 
 ## The Margin (M3)
-
 **Will this make money or bleed it?**
-
-- **Gross Margin (current):**
-- **Gross Margin (AI-adjusted):**
-- **Pricing Model:**
-- **Cascading Strategy:**
-- **Break-even at:**
+- **Gross Margin (current):** cost center — the dashboard doesn't directly recover revenue.
+- **Gross Margin (AI-adjusted):** ~99% — AI cost per transaction is trivial next to recovered revenue.
+- **Pricing Model:** outcome-based (a share of recovered revenue); no-win-no-fee if ever productized externally.
+- **Cascading Strategy:** small cheap model triages, frontier model only on hard cases (~95/5 split).
+- **Break-even at:** holds margin even at 3× cost stress; recovered revenue dwarfs inference cost. *(Figures held as placeholders in the public repo.)*
 
 → Details: [`03-the-margin/`](03-the-margin/)
 
 ---
 
 ## The Contract (M4)
-
 **Why users will trust a probabilistic system.**
-
-- **Reliability Target:**
-- **Golden Dataset:** __ rows, __ adversarial
-- **Confidence UX:** [approach]
-- **HITL Architecture:**
-- **Failure Mode Coverage:**
+- **Reliability Target:** 92% accuracy (decline class + action), <1% wrong-recovery rate.
+- **Golden Dataset:** ~150 rows v1, 3 adversarial cases (incl. fraud that looks retryable but must be left alone).
+- **Confidence UX:** >90% auto-apply · 70–90% one-click confirm · <70% block & escalate.
+- **HITL Architecture:** low-confidence or fraud-flagged cases route to a rotating analyst; every correction feeds the weekly gold-set audit (the M2 flywheel) so the queue shrinks.
+- **Failure Mode Coverage:** "wrong recovery" (our hallucination) auto-rolls back; drift triggers a gold-set audit, not a rollback.
 
 → Details: [`04-the-contract/`](04-the-contract/)
 
 ---
 
 ## The Guardrails (M5)
-
 **What breaks when this scales — and what compounds.**
-
-- **Compounding System:** [describe feedback loops]
-- **Governance Posture:** [approach]
-- **Shadow AI Status:** __ tools found, __ triaged
-- **Agent Boundaries:**
-- **Regulatory Exposure:**
+- **Compounding System:** Recursive Learning (active — each action labels its own ground truth) and Cross-Domain Transfer (active, underused); Network Intelligence is broken (siloed per program).
+- **Governance Posture:** any money-moving action is gated; reading is free, writing is approved by confidence + value caps.
+- **Shadow AI Status:** 5 user workarounds found · 3 triaged to "build" — and they *are* the roadmap.
+- **Agent Boundaries:** can retry/reroute/tokenize on high-confidence soft/false declines; can't touch fraud/hard declines or exceed value caps.
+- **Regulatory Exposure:** PCI-DSS, GDPR/CCPA, fair-treatment; EU AI Act risk tier *limited*.
 
 → Details: [`05-the-guardrails/`](05-the-guardrails/)
 
